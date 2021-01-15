@@ -1,0 +1,31 @@
+{
+  "name": "smart-contract-quickstart",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.1",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@openzeppelin/contracts": "^3.3.0",
+    "chai": "^4.2.0",
+    "ethereum-waffle": "^3.2.1",
+    "ethereumjs-tx": "^2.1.2",
+    "ethers": "^5.0.24",
+    "hardhat": "^2.0.6",
+    "web3": "^1.3.1"
+  },
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": "https://github.com/ava-labs/smart-contract-quickstart",
+  "author": "Connor Daly <connor.daly@avalabs.org>",
+  "license": "MIT",
+  "scripts": {
+    "precompile": "rimraf ./build/",
+    "compile": "npx hardhat compile",
+    "pretest": "yarn compile",
+    "test": "npx hardhat test",
+    "test-deploy": "npx hardhat run scripts/deploy.js",
+    "deploy": "npx hardhat run scripts/deploy.js --network mainnet",
+    "deploy-fuji": "npx hardhat run scripts/deploy.js --network fuji",
+    "lint": "prettier ./test/**/*.ts --check",
+    "prepublishOnly": "yarn test"
+  }
+}
