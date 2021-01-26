@@ -80,6 +80,7 @@ You can define custom hardhat tasks in [hardhat.config.js](./hardhat.config.js).
 ```
 
 Run it with `yarn send-avax`.
+
 ## Hardhat Help
 
 You can run `yarn hardhat` list hardhat version, usage instructions, global options and available tasks.
