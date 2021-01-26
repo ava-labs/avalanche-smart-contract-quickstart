@@ -87,4 +87,4 @@ Run it with `yarn send-avax`.
 
 ## Hardhat Help
 
-You can run `yarn hardhat` list hardhat version, usage instructions, global options and available tasks.
+You can run `yarn hardhat` to list hardhat version, usage instructions, global options and available tasks.
