@@ -12,6 +12,10 @@ The goal of this guide is to lay out a best-practices regarding writing, testing
 
 First install the LTS of [nodejs](https://nodejs.org/en) which is `14.15.4` at the time of writing. NodeJS bundles `npm`. Next install [yarn](https://yarnpkg.com)
 
+```zsh
+npm install -g yarn
+```
+
 It is also helpful to have a basic understanding of [Solidity](https://docs.soliditylang.org) and [Avalanche](https://docs.avax.network).
 
 ## Dependencies
