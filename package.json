@@ -25,7 +25,11 @@
     "test-deploy": "npx hardhat run scripts/deploy.js",
     "deploy": "npx hardhat run scripts/deploy.js --network mainnet",
     "deploy-fuji": "npx hardhat run scripts/deploy.js --network fuji",
+    "send-avax": "npx hardhat run scripts/sendAvax.js",
     "lint": "prettier ./test/**/*.ts --check",
-    "prepublishOnly": "yarn test"
+    "prepublishOnly": "yarn test",
+    "hardhat": "npx hardhat",
+    "accounts": "npx hardhat accounts",
+    "balances": "npx hardhat balances"
   }
 }

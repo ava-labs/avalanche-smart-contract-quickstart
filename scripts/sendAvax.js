@@ -1,6 +1,6 @@
 const hre = require("hardhat");
 
-const AMOUNT_TO_SEND = '1'
+const AMOUNT_TO_SEND = '0.01'
 
 /**
  * Sends an amount of AVAX from the first address in the private key pool to the 
