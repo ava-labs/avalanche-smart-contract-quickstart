@@ -23,8 +23,8 @@ It is also helpful to have a basic understanding of [Solidity](https://docs.soli
 First clone this repo and download the necessary packages.
 
 ```zsh
-git clone https://github.com/ava-labs/smart-contract-quickstart.git
-cd smart-contract-quickstart
+git clone https://github.com/ava-labs/avalanche-smart-contract-quickstart.git
+cd avalanche-smart-contract-quickstart
 yarn
 ```
 
