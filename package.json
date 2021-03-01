@@ -22,16 +22,13 @@
     "compile": "npx hardhat compile",
     "pretest": "yarn compile",
     "test": "npx hardhat test",
-    "deploy-hardhat-network": "npx hardhat run scripts/deploy.js",
-    "deploy-avash": "npx hardhat run scripts/deploy.js --network avash",
-    "deploy-fuji": "npx hardhat run scripts/deploy.js --network fuji",
-    "deploy": "npx hardhat run scripts/deploy.js --network mainnet",
+    "deploy": "npx hardhat run scripts/deploy.js",
     "send-avax": "npx hardhat run scripts/sendAvax.js",
     "lint": "prettier ./test/**/*.ts --check",
     "prepublishOnly": "yarn test",
     "hardhat": "npx hardhat",
     "accounts": "npx hardhat accounts",
     "balances": "npx hardhat balances",
-    "fund-cchain-addresses": "npx hardhat run scripts/fund-cchain-addresses.js --network avash"
+    "fund-cchain-addresses": "npx hardhat run scripts/fund-cchain-addresses.js"
   }
 }

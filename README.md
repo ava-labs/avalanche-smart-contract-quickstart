@@ -58,20 +58,19 @@ Edit the deployment script in `scripts/deploy.js`
 
 ## Deploy
 
-Hardhat enables deploying to multiple environments. In [`package.json`](./package.json) there are scripts for deploying to the [hardhat network](https://hardhat.org/hardhat-network), [avash](https://github.com/ava-labs/avash), `fuji` and `mainnet`.
+Hardhat enables deploying to multiple environments. In [`package.json`](./package.json) there is a script for deploying.
 
 ```json
-"deploy-hardhat-network": "npx hardhat run scripts/deploy.js",
-"deploy-avash": "npx hardhat run scripts/deploy.js --network avash",
-"deploy-fuji": "npx hardhat run scripts/deploy.js --network fuji",
 "deploy": "npx hardhat run scripts/deploy.js --network mainnet",
 ```
 
-Deploy your contract to the Avalanche `fuji` testnet with `yarn deploy-fuji`.
+You can chose which environment that you want to deploy to by passing in the `--network` flag with `avash`, `fuji`, or `mainnet` for each respective environment. If you don't pass in `--network` then it will default to the hardhat network.  For example, if you want to deploy to mainnet
 
-To deploy to avash, `fuji` or `mainnet` you need to add your private key(s) to the `accounts` field in [hardhat.config.js](./hardhat.config.js).
+```zsh
+yarn deploy --network mainnet
+```
 
-Then run `yarn deploy` for mainnet, `yarn deploy-fuji` for fuji, `yarn deploy-avash` for avash and `yarn deploy-hardhat-network` for the hardhat network.
+When you deploy to `avash`, `fuji` or `mainnet` you can add your private key(s) as an array to the respective environment's `accounts` field in [hardhat.config.js](./hardhat.config.js).
 
 ## Hardhat Tasks
 
@@ -82,7 +81,24 @@ You can define custom hardhat tasks in [hardhat.config.js](./hardhat.config.js).
 "balances": "npx hardhat balances"
 ```
 
-`yarn accounts` will print the list of accounts. `yarn balances` prints the list of AVAX account balances.
+`yarn accounts` will print the list of accounts. `yarn balances` prints the list of AVAX account balances. As with other `yarn` scripts you can pass in a `--network` flag to hardhat tasks. For example, to check the balances of the accounts on the `avash` network.
+
+
+```zsh
+yarn balances --network avash
+yarn run v1.22.4
+$ npx hardhat balances --network avash
+0x8db97C7cEcE249c2b98bDC0226Cc4C2A57BF52FC has balance 0
+0x9632a79656af553F58738B0FB750320158495942 has balance 0
+0x55ee05dF718f1a5C1441e76190EB1a19eE2C9430 has balance 0
+0x4Cf2eD3665F6bFA95cE6A11CFDb7A2EF5FC1C7E4 has balance 0
+0x0B891dB1901D4875056896f28B6665083935C7A8 has balance 0
+0x01F253bE2EBF0bd64649FA468bF7b95ca933BDe2 has balance 0
+0x78A23300E04FB5d5D2820E23cc679738982e1fd5 has balance 0
+0x3C7daE394BBf8e9EE1359ad14C1C47003bD06293 has balance 0
+0x61e0B3CD93F36847Abbd5d40d6F00a8eC6f3cfFB has balance 0
+0x0Fa8EA536Be85F32724D57A37758761B86416123 has balance 0
+```
 
 ## Sending AVAX
 
