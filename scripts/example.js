@@ -2,7 +2,7 @@ const { Contract } = require("ethers");
 const hre = require("hardhat");
 
 // TODO: Enter your deployed contract address
-const COIN_ADDR = "0xcB65daD78320a8d15Ad8a88001324e4e163ca534";
+const COIN_ADDR = "0x0000000000000000000000000000000000000000";
 
 /**
  * Empty. Try calling some functions here.
