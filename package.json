@@ -1,5 +1,5 @@
 {
-  "name": "smart-contract-quickstart",
+  "name": "avalanche-smart-contract-quickstart",
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.1",
     "@nomiclabs/hardhat-waffle": "^2.0.1",
@@ -15,7 +15,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "repository": "https://github.com/ava-labs/smart-contract-quickstart",
+  "repository": "https://github.com/ava-labs/avalanche-smart-contract-quickstart",
   "author": "Connor Daly <connor.daly@avalabs.org>",
   "contributors": [
     "Gabriel Cardona <gabriel@avalabs.org>"
