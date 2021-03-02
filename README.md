@@ -61,7 +61,7 @@ Edit the deployment script in `scripts/deploy.js`
 Hardhat enables deploying to multiple environments. In [`package.json`](./package.json) there is a script for deploying.
 
 ```json
-"deploy": "npx hardhat run scripts/deploy.js --network mainnet",
+"deploy": "npx hardhat run scripts/deploy.js",
 ```
 
 You can chose which environment that you want to deploy to by passing in the `--network` flag with `avash`, `fuji`, or `mainnet` for each respective environment. If you don't pass in `--network` then it will default to the hardhat network.  For example, if you want to deploy to mainnet
