@@ -20,6 +20,7 @@
   "contributors": [
     "Gabriel Cardona <gabriel@avalabs.org>"
   ],
+  "license": "BSD-3-Clause",
   "scripts": {
     "precompile": "rimraf ./build/",
     "compile": "npx hardhat compile",
