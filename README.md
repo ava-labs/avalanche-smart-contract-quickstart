@@ -81,11 +81,11 @@ You can define custom hardhat tasks in [hardhat.config.js](./hardhat.config.js).
 "balances": "npx hardhat balances"
 ```
 
-`yarn accounts` will print the list of accounts. `yarn balances` prints the list of AVAX account balances. As with other `yarn` scripts you can pass in a `--network` flag to hardhat tasks. For example, to check the balances of the accounts on the `avash` network.
+`yarn accounts` will print the list of accounts. `yarn balances` prints the list of AVAX account balances. As with other `yarn` scripts you can pass in a `--network` flag to hardhat tasks.
 
 ### Accounts
 
-Print a list of accounts.
+Print a list of accounts on the `avash` network.
 
 ```zsh
 yarn accounts --network avash
@@ -105,7 +105,7 @@ $ npx hardhat accounts --network avash
 
 ### Balances
 
-Print a list of accounts and their corresponding AVAX balance.
+Print a list of accounts and their corresponding AVAX balances on the `avash` network.
 
 ```zsh
 yarn balances --network avash
@@ -242,7 +242,7 @@ $ npx hardhat balances --network avash
 Send each of the accounts some AVAX from the first account.
 
 ```zsh
- yarn send-avax --network avash
+yarn send-avax --network avash
 yarn run v1.22.4
 $ npx hardhat run scripts/sendAvax.js --network avash
 Seeding addresses with AVAX
@@ -298,21 +298,21 @@ We now have a token deployed at `0x789a5FDac2b37FCD290fb2924382297A6AE65860`. Th
 
 Import them both into MetaMask.
 
-![Account 1](./img/account1.png)
+<div><img src='./img/account1.png' alt='Account 1' width='400px'></div>
 
-![Account 2](./img/account2.png)
-
+<div><img src='./img/account2.png' alt='Account 2' width='400px'></div>
+  
 Now we add the `SYM` token to each account in MetaMask. Add Token -> Custom Token and paste in the `Token Contract Address`. The `Token Symbol` and `Decimals of Precision` should populate.
 
-![Add Token 1](./img/add-token1.png)
+<div><img src='./img/add-token1.png' alt='Add Token 1' width='400px'></div>
 
-![Add Token 2](./img/add-token2.png)
+<div><img src='./img/add-token2.png' alt='Add Token 2' width='400px'></div>
 
-![Add Token 3](./img/add-token3.png)
+<div><img src='./img/add-token3.png' alt='Add Token 3' width='400px'></div>
 
 **NOTE** the 2nd account doesn't have any `SYM` because it was all `mint`ed to the 1st account in the Coin's `constructor` function.
 
-![Add Token 4](./img/add-token4.png)
+<div><img src='./img/add-token4.png' alt='Add Token 4' width='400px'></div>
 
 You can now send `SYM` from the 1st account to the 2nd account. Go to the 1st account in MetaMask and click `Send SYM`, `Transfer between my accounts`, next select the 2nd account.
 
@@ -320,10 +320,10 @@ Next you'll land on the `Send Tokens` screen. Here you can set the amount to `50
 
 After clicking `Next` you'll land on the final confirmation screen. Make sure that everything looks good and click `Confirm`.
 
-![Send SYM 1](./img/send-sym1.png)
+<div><img src='./img/send-sym1.png' alt='Send SYM 1' width='400px'></div>
 
-![Send SYM 2](./img/send-sym2.png)
+<div><img src='./img/send-sym2.png' alt='Send SYM 2' width='400px'></div>
 
 Lastly note that the 2nd account has 507 `SYM`.
 
-![Send SYM 3](./img/send-sym3.png)
+<div><img src='./img/send-sym3.png' alt='Send SYM 3' width='400px'></div>
