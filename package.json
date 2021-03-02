@@ -20,6 +20,7 @@
   "scripts": {
     "precompile": "rimraf ./build/",
     "compile": "npx hardhat compile",
+    "console": "npx hardhat console",
     "pretest": "yarn compile",
     "test": "npx hardhat test",
     "deploy": "npx hardhat run scripts/deploy.js",
