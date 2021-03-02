@@ -1,4 +1,4 @@
-// contracts/mynft.sol
+// contracts/ERC721.sol
 // spdx-license-identifier: mit
 pragma solidity >= 0.6.2;
 
