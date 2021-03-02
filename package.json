@@ -17,6 +17,9 @@
   "main": "index.js",
   "repository": "https://github.com/ava-labs/smart-contract-quickstart",
   "author": "Connor Daly <connor.daly@avalabs.org>",
+  "contributors": [
+    "Gabriel Cardona <gabriel@avalabs.org>"
+  ],
   "license": "MIT",
   "scripts": {
     "precompile": "rimraf ./build/",
