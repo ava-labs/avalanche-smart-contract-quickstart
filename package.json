@@ -1,9 +1,10 @@
 {
-  "name": "smart-contract-quickstart",
+  "name": "avalanche-smart-contract-quickstart",
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.1",
     "@nomiclabs/hardhat-waffle": "^2.0.1",
     "@openzeppelin/contracts": "^3.3.0",
+    "avalanche": "3.2.0",
     "chai": "^4.2.0",
     "ethereum-waffle": "^3.2.1",
     "ethereumjs-tx": "^2.1.2",
@@ -14,21 +15,24 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "repository": "https://github.com/ava-labs/smart-contract-quickstart",
+  "repository": "https://github.com/ava-labs/avalanche-smart-contract-quickstart",
   "author": "Connor Daly <connor.daly@avalabs.org>",
+  "contributors": [
+    "Gabriel Cardona <gabriel@avalabs.org>"
+  ],
   "scripts": {
     "precompile": "rimraf ./build/",
     "compile": "npx hardhat compile",
+    "console": "npx hardhat console",
     "pretest": "yarn compile",
     "test": "npx hardhat test",
-    "test-deploy": "npx hardhat run scripts/deploy.js",
-    "deploy": "npx hardhat run scripts/deploy.js --network mainnet",
-    "deploy-fuji": "npx hardhat run scripts/deploy.js --network fuji",
+    "deploy": "npx hardhat run scripts/deploy.js",
     "send-avax": "npx hardhat run scripts/sendAvax.js",
     "lint": "prettier ./test/**/*.ts --check",
     "prepublishOnly": "yarn test",
     "hardhat": "npx hardhat",
     "accounts": "npx hardhat accounts",
-    "balances": "npx hardhat balances"
+    "balances": "npx hardhat balances",
+    "fund-cchain-addresses": "npx hardhat run scripts/fund-cchain-addresses.js"
   }
 }
