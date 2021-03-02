@@ -289,4 +289,41 @@ Coin deployed to: 0x789a5FDac2b37FCD290fb2924382297A6AE65860
 ✨  Done in 1.28s.
 ```
 
-We now have a token deployed at `0x789a5FDac2b37FCD290fb2924382297A6AE65860`. The `constructor` function of [this token](contracts/Coin.sol#L15) `mint`s the `TOTAL_BALANCE` to the account which called the contract.
+We now have a token deployed at `0x789a5FDac2b37FCD290fb2924382297A6AE65860`. The `constructor` function of [this token](contracts/Coin.sol#L15) `mint`s the `TOTAL_BALANCE` to the account which called the contract which is the first address in the `avash` `accounts` array in [hardhat.config.js](./hardhat.config.js).
+
+```json
+  "0x56289e99c94b6912bfc12adc093c9b51124f0dc54ac7a766b2bc5ccf558d8027", 
+  "0x7b4198529994b0dc604278c99d153cfd069d594753d471171a1d102a10438e07",
+```
+
+Import them both into MetaMask.
+
+![Account 1](./img/account1.png)
+
+![Account 2](./img/account2.png)
+
+Now we add the `SYM` token to each account in MetaMask. Add Token -> Custom Token and paste in the `Token Contract Address`. The `Token Symbol` and `Decimals of Precision` should populate.
+
+![Add Token 1](./img/add-token1.png)
+
+![Add Token 2](./img/add-token2.png)
+
+![Add Token 3](./img/add-token3.png)
+
+**NOTE** the 2nd account doesn't have any `SYM` because it was all `mint`ed to the 1st account in the Coin's `constructor` function.
+
+![Add Token 4](./img/add-token4.png)
+
+You can now send `SYM` from the 1st account to the 2nd account. Go to the 1st account in MetaMask and click `Send SYM`, `Transfer between my accounts`, next select the 2nd account.
+
+Next you'll land on the `Send Tokens` screen. Here you can set the amount to `3.14` and the Gas Price to `470`. This gas price is very important. If you set the value below `470` then the transaction won't go through so make sure and double confirm this is correct.
+
+After clicking `Next` you'll land on the final confirmation screen. Make sure that everything looks good and click `Confirm`.
+
+![Send SYM 1](./img/send-sym1.png)
+
+![Send SYM 2](./img/send-sym2.png)
+
+Lastly note that the 2nd account has 507 `SYM`.
+
+![Send SYM 3](./img/send-sym3.png)
