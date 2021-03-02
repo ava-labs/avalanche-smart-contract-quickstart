@@ -17,10 +17,14 @@
   "main": "index.js",
   "repository": "https://github.com/ava-labs/smart-contract-quickstart",
   "author": "Connor Daly <connor.daly@avalabs.org>",
+  "contributors": [
+    "Gabriel Cardona <gabriel@avalabs.org>"
+  ],
   "license": "MIT",
   "scripts": {
     "precompile": "rimraf ./build/",
     "compile": "npx hardhat compile",
+    "console": "npx hardhat console",
     "pretest": "yarn compile",
     "test": "npx hardhat test",
     "deploy": "npx hardhat run scripts/deploy.js",
