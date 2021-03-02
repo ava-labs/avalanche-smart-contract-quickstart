@@ -316,7 +316,7 @@ Now we add the `SYM` token to each account in MetaMask. Add Token -> Custom Toke
 
 You can now send `SYM` from the 1st account to the 2nd account. Go to the 1st account in MetaMask and click `Send SYM`, `Transfer between my accounts`, next select the 2nd account.
 
-Next you'll land on the `Send Tokens` screen. Here you can set the amount to `3.14` and the Gas Price to `470`. This gas price is very important. If you set the value below `470` then the transaction won't go through so make sure and double confirm this is correct.
+Next you'll land on the `Send Tokens` screen. Here you can set the amount to `507` and the Gas Price to `470`. This gas price is very important. If you set the value below `470` then the transaction won't go through so make sure and double confirm this is correct.
 
 After clicking `Next` you'll land on the final confirmation screen. Make sure that everything looks good and click `Confirm`.
 

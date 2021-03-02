@@ -20,7 +20,6 @@
   "contributors": [
     "Gabriel Cardona <gabriel@avalabs.org>"
   ],
-  "license": "MIT",
   "scripts": {
     "precompile": "rimraf ./build/",
     "compile": "npx hardhat compile",
