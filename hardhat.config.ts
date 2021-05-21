@@ -1,29 +1,26 @@
-require("@nomiclabs/hardhat-waffle");
-require("@nomiclabs/hardhat-ethers");
+import { task } from "hardhat/config"
+import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers"
+import { BigNumber } from "ethers"
+import "@nomiclabs/hardhat-waffle"
 
-// This is a sample Hardhat task. To learn how to create your own go to
-// https://hardhat.org/guides/create-task.html
-task("accounts", "Prints the list of accounts", async () => {
-  const accounts = await ethers.getSigners();
+task("accounts", "Prints the list of accounts", async (args, hre): Promise<void> => {
+  const accounts: SignerWithAddress[] = await hre.ethers.getSigners()
 
   for (const account of accounts) {
-    console.log(account.address);
+    console.log(account.address)
   }
 });
 
-task("balances", "Prints the list of AVAX account balances", async () => {
-  const accounts = await ethers.getSigners();
+task("balances", "Prints the list of AVAX account balances", async (args, hre): Promise<void> => {
+  const accounts: SignerWithAddress[] = await hre.ethers.getSigners()
 
   for (const account of accounts) {
-    balance = await ethers.provider.getBalance(account.address);
-    console.log(account.address, "has balance", balance.toString());
+    const balance: BigNumber = await hre.ethers.provider.getBalance(account.address)
+    console.log(`${account.address} has balance ${balance.toString()}`)
   }
 });
 
-/**
- * @type import('hardhat/config').HardhatUserConfig
- */
-module.exports = {
+export default {
   solidity: {
     compilers: [
       {
@@ -78,4 +75,4 @@ module.exports = {
       accounts: []
     }
   }
-};
+}
