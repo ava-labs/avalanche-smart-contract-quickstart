@@ -1,11 +1,13 @@
 import { 
     BigNumber,
-    Contract 
+    Contract, 
+    ContractFactory
 } from "ethers"
 import { ethers } from "hardhat"
+import { ContractType } from "hardhat/internal/hardhat-network/stack-traces/model"
 
-const coinName: string = "CustomCoin"
-const coinAddr: string = "0x52C84043CD9c865236f11d9Fc9F56aa003c1f922"
+const coinName: string = "AVASHStable"
+const coinAddr: string = "0x5aa01B3b5877255cE50cc55e8986a7a5fe29C70e"
 const walletAddress: string = "0x8db97C7cEcE249c2b98bDC0226Cc4C2A57BF52FC"
 
 const main = async(): Promise<any> => {
@@ -25,7 +27,19 @@ const main = async(): Promise<any> => {
   const balance: BigNumber = await contract.balanceOf(walletAddress)
   console.log(`Balance of ${walletAddress}: ${balance.toString()}`)
 
-  const totalSupply: BigNumber = await contract.totalSupply()
+  let totalSupply: BigNumber = await contract.totalSupply()
+  console.log(`Total supply: ${totalSupply.toString()}`)
+
+  console.log(`-----MINTING-----`)
+  await contract.mint(walletAddress, totalSupply)
+
+  totalSupply = await contract.totalSupply()
+  console.log(`Total supply: ${totalSupply.toString()}`)
+
+  console.log(`-----BURNING-----`)
+  await contract.burn(walletAddress, totalSupply)
+
+  totalSupply = await contract.totalSupply()
   console.log(`Total supply: ${totalSupply.toString()}`)
 
   const tx = await contract.transfer(walletAddress, balance)
