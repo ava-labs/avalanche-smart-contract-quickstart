@@ -32,6 +32,7 @@
     "pretest": "yarn compile",
     "test": "npx hardhat test",
     "deploy": "npx hardhat run scripts/deploy.ts",
+    "erc20": "npx hardhat run scripts/erc20.ts",
     "send-avax": "npx hardhat run scripts/sendAvax.js",
     "lint": "prettier ./test/**/*.ts --check",
     "prepublishOnly": "yarn test",
