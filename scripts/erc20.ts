@@ -4,7 +4,6 @@ import {
     ContractFactory
 } from "ethers"
 import { ethers } from "hardhat"
-import { ContractType } from "hardhat/internal/hardhat-network/stack-traces/model"
 
 const coinName: string = "AVASHStable"
 const coinAddr: string = "0x5aa01B3b5877255cE50cc55e8986a7a5fe29C70e"
