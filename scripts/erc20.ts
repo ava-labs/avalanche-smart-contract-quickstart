@@ -31,9 +31,9 @@ const main = async(): Promise<any> => {
   const tx = await contract.transfer(walletAddress, balance)
   console.log("--TX--")
   console.log(tx)
-  console.log("--TX RECEIPT--")
 
   const txReceipt = await tx.wait()
+  console.log("--TX RECEIPT--")
   console.log(txReceipt)
 }
 
