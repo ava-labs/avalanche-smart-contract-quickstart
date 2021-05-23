@@ -1,7 +1,6 @@
 import { 
     BigNumber,
-    Contract, 
-    ContractFactory
+    Contract
 } from "ethers"
 import { ethers } from "hardhat"
 
