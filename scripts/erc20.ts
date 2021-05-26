@@ -40,11 +40,11 @@ const main = async (): Promise<any> => {
   totalSupply = await contract.totalSupply()
   console.log(`Total supply: ${totalSupply.toString()}`)
 
-  const tx = await contract.transfer(walletAddress, balance)
+  const tx: any = await contract.transfer(walletAddress, balance)
   console.log("--TX--")
   console.log(tx)
 
-  const txReceipt = await tx.wait()
+  const txReceipt: any = await tx.wait()
   console.log("--TX RECEIPT--")
   console.log(txReceipt)
 }
