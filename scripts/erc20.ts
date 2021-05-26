@@ -1,25 +1,25 @@
-import { 
-    BigNumber,
-    Contract
+import {
+  BigNumber,
+  Contract
 } from "ethers"
 import { ethers } from "hardhat"
 
-const coinName: string = "AVASHStable"
-const coinAddr: string = "0x5aa01B3b5877255cE50cc55e8986a7a5fe29C70e"
-const walletAddress: string = "0x8db97C7cEcE249c2b98bDC0226Cc4C2A57BF52FC"
+const coinName: string = ""
+const coinAddr: string = ""
+const walletAddress: string = ""
 
-const main = async(): Promise<any> => {
+const main = async (): Promise<any> => {
   const contract: Contract = await ethers.getContractAt(coinName, coinAddr)
-  const contractAddress: string = contract.address 
+  const contractAddress: string = contract.address
   console.log(`Address: ${contractAddress}`)
 
-  const name: string = await contract.name() 
+  const name: string = await contract.name()
   console.log(`Name: ${name}`)
 
-  const symbol: string = await contract.symbol() 
+  const symbol: string = await contract.symbol()
   console.log(`Symbol: ${symbol}`)
 
-  const decimals: string = await contract.decimals() 
+  const decimals: string = await contract.decimals()
   console.log(`Decimals: ${decimals}`)
 
   const balance: BigNumber = await contract.balanceOf(walletAddress)
@@ -50,8 +50,8 @@ const main = async(): Promise<any> => {
 }
 
 main()
-.then(() => process.exit(0))
-.catch(error => {
-  console.error(error)
-  process.exit(1)
-})
+  .then(() => process.exit(0))
+  .catch(error => {
+    console.error(error)
+    process.exit(1)
+  })
