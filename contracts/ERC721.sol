@@ -1,5 +1,5 @@
-// contracts/ERC721.sol
-// spdx-license-identifier: mit
+// contracts/ERC721.so
+// spdx-license-identifier: BSD-3-Clause
 
 pragma solidity ^0.8.0;
 
