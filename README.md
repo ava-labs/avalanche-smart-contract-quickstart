@@ -12,7 +12,7 @@ The goal of this guide is to lay out a best-practices regarding writing, testing
 
 ### NodeJS and Yarn
 
-First install the LTS of [nodejs](https://nodejs.org/en) which is `14.15.4` at the time of writing. NodeJS bundles `npm`.
+First install the LTS of [nodejs](https://nodejs.org/en) which is `14.17.0` at the time of writing. NodeJS bundles `npm`.
 
 Next install [yarn](https://yarnpkg.com):
 
@@ -54,14 +54,14 @@ Run `yarn compile` to make sure your project compiles.
 
 ## Prepare to Deploy
 
-Edit the deployment script in `scripts/deploy.js`
+Edit the deployment script in `scripts/deploy.ts`
 
 ## Deploy
 
 Hardhat enables deploying to multiple environments. In [`package.json`](./package.json) there is a script for deploying.
 
 ```json
-"deploy": "npx hardhat run scripts/deploy.js",
+"deploy": "npx hardhat run scripts/deploy.ts",
 ```
 
 You can chose which environment that you want to deploy to by passing in the `--network` flag with `avash`, `fuji`, or `mainnet` for each respective environment. If you don't pass in `--network` then it will default to the hardhat network.  For example, if you want to deploy to mainnet
@@ -74,7 +74,7 @@ When you deploy to `avash`, `fuji` or `mainnet` you can add your private key(s) 
 
 ## Hardhat Tasks
 
-You can define custom hardhat tasks in [hardhat.config.js](./hardhat.config.js). There are two tasks included as examples&mdash;`accounts` and `balances` both of which have scripts in [package.json](./package.json).
+You can define custom hardhat tasks in [hardhat.config.ts](./hardhat.config.ts). There are two tasks included as examples&mdash;`accounts` and `balances` both of which have scripts in [package.json](./package.json).
 
 ```json
 "accounts": "npx hardhat accounts",
@@ -206,7 +206,7 @@ RunScript: Running scripts/five_node_staking.lua
 RunScript: Successfully ran scripts/five_node_staking.lua
 ```
 
-Now you have a local avalanche network with 5 staking nodes. Next transfer 1000 AVAX from the X-Chain to each of the 10 avash accounts in `hardhat.config.js`.
+Now you have a local avalanche network with 5 staking nodes. Next transfer 1000 AVAX from the X-Chain to each of the 10 avash accounts in `hardhat.config.ts`.
 
 ```zsh
 cd /path/to/avalanche-smart-contract-quickstart
@@ -284,12 +284,12 @@ Deploy the contract to the `avash` local network
 ```zsh
 yarn deploy --network avash
 yarn run v1.22.4
-$ npx hardhat run scripts/deploy.js --network avash
+$ npx hardhat run scripts/deploy.ts --network avash
 Coin deployed to: 0x789a5FDac2b37FCD290fb2924382297A6AE65860
 ✨  Done in 1.28s.
 ```
 
-We now have a token deployed at `0x789a5FDac2b37FCD290fb2924382297A6AE65860`. The `constructor` function of [this token](contracts/Coin.sol#L15) `mint`s the `TOTAL_BALANCE` to the account which called the contract which is the first address in the `avash` `accounts` array in [hardhat.config.js](./hardhat.config.js).
+We now have a token deployed at `0x789a5FDac2b37FCD290fb2924382297A6AE65860`. The `constructor` function of [this token](contracts/Coin.sol#L15) `mint`s the `TOTAL_BALANCE` to the account which called the contract which is the first address in the `avash` `accounts` array in [hardhat.config.ts](./hardhat.config.ts).
 
 ```json
   "0x56289e99c94b6912bfc12adc093c9b51124f0dc54ac7a766b2bc5ccf558d8027", 
