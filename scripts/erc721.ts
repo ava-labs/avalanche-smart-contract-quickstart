@@ -1,6 +1,6 @@
 import { Contract } from "ethers"
 import { ethers } from "hardhat"
-import { abi } from "../artifacts/contracts/ERC721.sol/NFT.json"
+import { abi } from "../artifacts/contracts/NFT.sol/NFT.json"
 
 const coinAddr: string = "0xe304EDd5C4e590e2b8ce08b9625597FF38192D71"
 const main = async (): Promise<any> => {
