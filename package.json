@@ -33,6 +33,7 @@
     "test": "npx hardhat test",
     "deploy": "npx hardhat run scripts/deploy.ts",
     "erc20": "npx hardhat run scripts/erc20.ts",
+    "erc721": "npx hardhat run scripts/erc721.ts --network mainnet",
     "storage": "npx hardhat run scripts/storage.ts",
     "send-avax-wallet-signer": "npx hardhat run scripts/sendAvaxWalletSigner.ts",
     "send-avax-json-provider": "npx hardhat run scripts/sendAvaxJSONProvider.ts",
