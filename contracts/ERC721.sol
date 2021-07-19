@@ -6,7 +6,7 @@ pragma solidity >= 0.6.2;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
-contract GameItem is ERC721 {
+contract NFT is ERC721 {
   using Counters for Counters.Counter;
   Counters.Counter private _tokenIds;
 
