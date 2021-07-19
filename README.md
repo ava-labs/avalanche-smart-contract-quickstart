@@ -64,7 +64,7 @@ Hardhat enables deploying to multiple environments. In [`package.json`](./packag
 "deploy": "npx hardhat run scripts/deploy.ts",
 ```
 
-You can chose which environment that you want to deploy to by passing in the `--network` flag with `avash`, `fuji`, or `mainnet` for each respective environment. If you don't pass in `--network` then it will default to the hardhat network.  For example, if you want to deploy to mainnet
+You can chose which environment that you want to deploy to by passing in the `--network` flag with `avash`, `fuji`, or `mainnet` for each respective environment. If you don't pass in `--network` then it will default to the hardhat network. For example, if you want to deploy to mainnet
 
 ```zsh
 yarn deploy --network mainnet
@@ -125,13 +125,13 @@ $ npx hardhat balances --network avash
 
 ## Sending AVAX
 
-[package.json](./package.json) has a `send-avax` script which is found in [scripts/sendAvax.js](./scripts/sendAvax.js).
+[package.json](./package.json) has a `send-avax-wallet-signer` script which is found in [scripts/sendAvaWalletSigner.ts](./scripts/sendAvaWalletSigner.ts).
 
 ```json
-"send-avax": "npx hardhat run scripts/sendAvax.js",
+"send-avax-wallet-signer": "npx hardhat run scripts/sendAvaWalletSigner.ts",
 ```
 
-Run it with `yarn send-avax`.
+Run it with `yarn send-avax-wallet-signer`.
 
 ## Funding Accounts
 
@@ -242,9 +242,9 @@ $ npx hardhat balances --network avash
 Send each of the accounts some AVAX from the first account.
 
 ```zsh
-yarn send-avax --network avash
+yarn send-avax-wallet-signer --network avash
 yarn run v1.22.4
-$ npx hardhat run scripts/sendAvax.js --network avash
+$ npx hardhat run scripts/sendAvaWalletSigner.ts --network avash
 Seeding addresses with AVAX
 ✨  Done in 1.33s.
 ```
@@ -292,7 +292,7 @@ Coin deployed to: 0x789a5FDac2b37FCD290fb2924382297A6AE65860
 We now have a token deployed at `0x789a5FDac2b37FCD290fb2924382297A6AE65860`. The `constructor` function of [this token](contracts/Coin.sol#L15) `mint`s the `TOTAL_BALANCE` to the account which called the contract which is the first address in the `avash` `accounts` array in [hardhat.config.ts](./hardhat.config.ts).
 
 ```json
-  "0x56289e99c94b6912bfc12adc093c9b51124f0dc54ac7a766b2bc5ccf558d8027", 
+  "0x56289e99c94b6912bfc12adc093c9b51124f0dc54ac7a766b2bc5ccf558d8027",
   "0x7b4198529994b0dc604278c99d153cfd069d594753d471171a1d102a10438e07",
 ```
 
@@ -301,7 +301,7 @@ Import them both into MetaMask.
 <div><img src='./img/account1.png' alt='Account 1' width='400px'></div>
 
 <div><img src='./img/account2.png' alt='Account 2' width='400px'></div>
-  
+
 Now we add the `SYM` token to each account in MetaMask. Add Token -> Custom Token and paste in the `Token Contract Address`. The `Token Symbol` and `Decimals of Precision` should populate.
 
 <div><img src='./img/add-token1.png' alt='Add Token 1' width='400px'></div>
