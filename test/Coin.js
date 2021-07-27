@@ -21,7 +21,7 @@ const AMT = 150
 // Start test block
 describe('Coin', function () {
     before(async function () {
-        this.Coin = await ethers.getContractFactory("CustomCoin");
+        this.Coin = await ethers.getContractFactory("ExampleERC20");
         this.MockContract = await ethers.getContractFactory("contracts/MockContract.sol:MockContract");
     });
 
@@ -38,10 +38,6 @@ describe('Coin', function () {
     //       Constructor 
     //////////////////////////////
     describe("Constructor", function () {
-        it('decimals default', async function () {
-            expect((await this.coin.decimals())).to.equal(DECIMALS);
-        });
-
         it('mock test', async function () {
             // If another contract calls balanceOf on the mock contract, return AMT
             const balanceOf = Web3.utils.sha3('balanceOf(address)').slice(0,10);
