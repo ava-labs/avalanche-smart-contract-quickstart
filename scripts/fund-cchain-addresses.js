@@ -65,6 +65,18 @@ const threshold = 1;
 const memo = bintools.stringToBuffer(
   'AVM utility method buildExportTx to export AVAX to the C-Chain from the X-Chain'
 );
+
+const waitForUtxo = async () => {
+  const u = await cchain.getUTXOs(cAddressStrings[0], 'X');
+
+  if (u.utxos.getAllUTXOs().length) {
+    return u.utxos.getAllUTXOs();
+  } else {
+    await sleep(mstimeout);
+    return waitForUtxo();
+  }
+};
+
 const main = async () => {
   const avaxAssetID = await xchain.getAVAXAssetID();
   const getBalanceResponse = await xchain.getBalance(
@@ -115,6 +127,7 @@ const main = async () => {
     );
     inputs.push(input);
   });
+
   const exportTx = new avm_1.ExportTx(
     networkID,
     bintools.cb58Decode(xChainBlockchainID),
@@ -130,10 +143,9 @@ const main = async () => {
   console.log(avmTXID);
   await sleep(mstimeout);
   console.log('Importing AVAX to the C-Chain...');
-  const u = await cchain.getUTXOs(cAddressStrings[0], 'X');
+  console.log('Please wait');
+  const utxos = await waitForUtxo();
 
-  const utxoSet = u.utxos;
-  const utxos = utxoSet.getAllUTXOs();
   utxos.forEach((utxo, index) => {
     const assetID = utxo.getAssetID();
     const txid = utxo.getTxID();
@@ -144,15 +156,17 @@ const main = async () => {
     input.addSignatureIdx(0, cAddresses[0]);
     const xferin = new evm_1.TransferableInput(txid, outputidx, assetID, input);
     importedIns.push(xferin);
+
     cHexAddresses.forEach((cHexAddress) => {
       const evmOutput = new evm_1.EVMOutput(
         cHexAddress,
-        amt.div(new avalanche_1.BN(10)),
+        new avalanche_1.BN(1000000000),
         assetID
       );
       evmOutputs.push(evmOutput);
     });
   });
+
   const importTx = new evm_1.ImportTx(
     networkID,
     cChainBlockchainIdBuf,
@@ -161,6 +175,7 @@ const main = async () => {
     evmOutputs
   );
   const evmUnsignedTx = new evm_1.UnsignedTx(importTx);
+
   const evmTx = evmUnsignedTx.sign(cKeychain);
   const evmTXID = await cchain.issueTx(evmTx);
   console.log(evmTXID);
