@@ -60,7 +60,7 @@ export default {
       chainId: !forkingData ? 43112 : undefined, //Only specify a chainId if we are not forking
       forking: forkingData
     },
-    avash: {
+    local: {
       url: 'http://localhost:9650/ext/bc/C/rpc',
       gasPrice: 225000000000,
       chainId: 43112,
