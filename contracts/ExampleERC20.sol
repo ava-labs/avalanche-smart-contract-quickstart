@@ -1,5 +1,5 @@
 //SPDX-License-Identifier: MIT
-pragma solidity >=0.6.0 <0.8.0;
+pragma solidity >=0.6.2;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -10,7 +10,7 @@ contract ExampleERC20 is ERC20, Ownable {
 
   uint256 private constant TOTAL_SUPPLY = 123456789;
 
-  constructor() public ERC20(TOKEN_NAME, TOKEN_SYMBOL) {
+  constructor()ERC20(TOKEN_NAME, TOKEN_SYMBOL) {
     _mint(msg.sender, TOTAL_SUPPLY);
   }
 

@@ -10,9 +10,11 @@ contract NFT is ERC721 {
   using Counters for Counters.Counter;
   Counters.Counter private _tokenIds;
 
-  constructor() public ERC721("GameItem", "ITM") {}
+  constructor() ERC721("GameItem", "ITM") {}
 
-  function awardItem(address player, string memory tokenURI)
+  // commented out unused variable
+  // function awardItem(address player, string memory tokenURI)
+  function awardItem(address player)
     public
     returns (uint256)
   {
