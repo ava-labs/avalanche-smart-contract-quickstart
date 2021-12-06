@@ -50,6 +50,22 @@ In our repository we use a pre-configured file [hardhat.config.ts](https://githu
 
 You can define custom hardhat tasks in [hardhat.config.ts](https://github.com/ava-labs/avalanche-smart-contract-quickstart/blob/main/hardhat.config.ts).
 
+## Snowtrace Verification
+
+To try out Snowtrace verification, you first need to deploy a contract to an Ethereum network that's supported by Snowtrace, such as Fuji, C-Chain.
+
+In this project, copy the env.example file to a file named .env, and then edit it to fill in the details. Enter your Snowtrace API key, and the private key of the account which will send the deployment transaction. With a valid .env file in place, first deploy your contract:
+
+```shell
+hardhat run --network fuji scripts/deploy.ts
+```
+
+Then, copy the deployment address and paste it in to replace `DEPLOYED_CONTRACT_ADDRESS` and `CONSTRUCTOR_ARGUMENTS` if needed in this command:
+
+```shell
+npx hardhat verify --network fuji DEPLOYED_CONTRACT_ADDRESS CONSTRUCTOR_ARGUMENTS
+```
+
 ## Documentation
 
 There is a documentation under the Avalanche's official documentation repository:
