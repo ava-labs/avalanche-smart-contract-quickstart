@@ -2,7 +2,7 @@ import { task } from "hardhat/config";
 import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 import { BigNumber } from "ethers";
 import "@nomiclabs/hardhat-waffle";
-import { PRIVATE_KEY } from './.env.json'
+import { PRIVATE_KEY, APIKEY, COINMARKET } from "./.env.json";
 
 // When using the hardhat network, you may choose to fork Fuji or Avalanche Mainnet
 // This will allow you to debug contracts using the hardhat network while keeping the current network state
@@ -48,6 +48,17 @@ task(
 );
 
 export default {
+  gasReporter: {
+    currency: "USD",
+    coinmarketcap: COINMARKET,
+    gasPrice: 100,
+  },
+  etherscan: {
+    // Your API key for Etherscan
+    // Obtain one at https://etherscan.io/
+    apiKey: APIKEY,
+  },
+
   solidity: {
     compilers: [
       {
@@ -94,7 +105,7 @@ export default {
       url: "https://api.avax-test.network/ext/bc/C/rpc",
       gasPrice: 225000000000,
       chainId: 43113,
-      accounts: [ PRIVATE_KEY ],
+      accounts: [PRIVATE_KEY],
     },
     mainnet: {
       url: "https://api.avax.network/ext/bc/C/rpc",
@@ -103,9 +114,9 @@ export default {
       accounts: [],
     },
     wagmi: {
-      url: "https://api-wagmi.avax-test.network/rpc",
+      url: "https://subnets.avax.network/wagmi/wagmi-chain-testnet/rpc",
       chainId: 11111,
-      accounts: [ PRIVATE_KEY ],
+      accounts: [PRIVATE_KEY],
     },
   },
 };
