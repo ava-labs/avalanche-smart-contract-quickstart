@@ -1,7 +1,11 @@
 import { task } from "hardhat/config";
 import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 import { BigNumber } from "ethers";
+import "@typechain/hardhat";
+import "@nomiclabs/hardhat-ethers";
 import "@nomiclabs/hardhat-waffle";
+import "hardhat-gas-reporter";
+import "@nomiclabs/hardhat-etherscan";
 import { PRIVATE_KEY, APIKEY, COINMARKET } from "./.env.json";
 
 // When using the hardhat network, you may choose to fork Fuji or Avalanche Mainnet
@@ -54,8 +58,8 @@ export default {
     gasPrice: 100,
   },
   etherscan: {
-    // Your API key for Etherscan
-    // Obtain one at https://etherscan.io/
+    // Your API key for Snowtrace
+    // Obtain one at https://snowtrace.io/
     apiKey: APIKEY,
   },
 
@@ -74,7 +78,7 @@ export default {
         version: "0.7.0",
       },
       {
-        version: "0.8.0",
+        version: "0.8.10",
       },
     ],
   },

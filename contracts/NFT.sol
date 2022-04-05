@@ -28,7 +28,7 @@ contract NFT is ERC721, ERC721Enumerable, AccessControl {
     _tokenIdCounter.increment();
   }
 
-  function safeMint(address to) public onlyRole(MINTER_ROLE) {
+  function awardGameItem(address to) public onlyRole(MINTER_ROLE) {
     require(_tokenIdCounter.current() < maxTokens + 1, 'Maximum amount of tokens minted');
     _safeMint(to, _tokenIdCounter.current());
     _tokenIdCounter.increment();

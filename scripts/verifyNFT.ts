@@ -9,6 +9,7 @@ const _maxTokens = "100";
 
 async function main() {
   await hre.run("verify:verify", {
+    // Replace with new address
     address: "0x3972c87769886C4f1Ff3a8b52bc57738E82192D5",
     constructorArguments: [name, symbol, _metadataUri, _maxTokens],
   });
