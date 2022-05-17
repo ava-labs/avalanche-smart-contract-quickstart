@@ -7,7 +7,7 @@
     "@types/chai": "^4.2.21",
     "@types/mocha": "^9.0.0",
     "@types/node": "^16.7.1",
-    "avalanche": "3.8.5",
+    "avalanche": "^3.14.0",
     "chai": "^4.3.4",
     "ethereum-waffle": "^3.4.0",
     "ethereumjs-tx": "^2.1.2",
