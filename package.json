@@ -12,7 +12,7 @@
     "ethereum-waffle": "^3.4.0",
     "ethereumjs-tx": "^2.1.2",
     "ethers": "^5.4.5",
-    "hardhat": "2.6.1",
+    "hardhat": "2.9.8",
     "ts-node": "^10.2.1",
     "web3": "^1.5.2"
   },
