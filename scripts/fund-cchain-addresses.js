@@ -8,9 +8,10 @@ const sleep = (ms) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
 const ip = 'localhost';
+// Change to Node Port if using Avalanche Network Runner
 const port = 9650;
 const protocol = 'http';
-const networkID = 12345;
+const networkID = 1337;
 const avalanche = new avalanche_1.Avalanche(ip, port, protocol, networkID);
 const mstimeout = 3000;
 const xchain = avalanche.XChain();
@@ -50,9 +51,9 @@ const cHexAddresses = [
   '0x61e0b3cd93f36847abbd5d40d6f00a8ec6f3cffb',
   '0x0fa8ea536be85f32724d57a37758761b86416123'
 ];
-const cChainBlockchainID = utils_1.Defaults.network['12345'].C.blockchainID;
+const cChainBlockchainID = 'BR28ypgLATNS6PbtHMiJ7NQ61vfpT27Hj8tAcZ1AHsfU5cz88';
 const cChainBlockchainIdBuf = bintools.cb58Decode(cChainBlockchainID);
-const xChainBlockchainID = utils_1.Defaults.network['12345'].X.blockchainID;
+const xChainBlockchainID = 'qzfF3A11KzpcHkkqznEyQgupQrCNS6WV6fTUTwZpEKqhj1QE7';
 const xChainBlockchainIdBuf = bintools.cb58Decode(xChainBlockchainID);
 const exportedOuts = [];
 const outputs = [];
