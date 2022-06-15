@@ -38,7 +38,7 @@ $ yarn
 
 ## Write Contracts
 
-Edit the `Coin.sol` contract in `contracts/`. `Coin.sol` is an [Open Zeppelin](https://openzeppelin.com) [ERC20](https://eips.ethereum.org/EIPS/eip-20) contract. ERC20 is a popular smart contract interface. You can also add your own contracts.
+Edit the `ExampleERC20.sol` contract in `contracts/`. `ExampleERC20.sol` is an [Open Zeppelin](https://openzeppelin.com) [ERC20](https://eips.ethereum.org/EIPS/eip-20) contract. ERC20 is a popular smart contract interface. You can also add your own contracts.
 
 ## Hardhat Config
 
