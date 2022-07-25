@@ -1,12 +1,8 @@
 async function deployStorageV2() {
   const Storagev2 = await hre.ethers.getContractFactory('StorageV2')
   console.log('Deploying Storage2...')
-  const storage = await hre.upgrades.deployProxy(Storagev2, [43], {
-    initializer: 'store',
-  })
-  console.log('Storage2 deployed to:', storage.address)
-  const number = (await storage.retrieve()).toString()
-  console.log({ storeValue: number })
+  const storage = await Storagev2.deploy()
+  console.log('StorageV2 deployed to:', storage.address)
 }
 
 deployStorageV2()

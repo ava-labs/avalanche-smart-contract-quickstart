@@ -1,0 +1,38 @@
+{
+  "manifestVersion": "3.2",
+  "admin": {
+    "address": "0xE742a4b5F98453027fA3A9b0de106e237B6746B1",
+    "txHash": "0x0b7cd46786e82ef734842ef987ab2e48b612ba4f7a6d0c81e9d6bdd9a3d32907"
+  },
+  "proxies": [
+    {
+      "address": "0x9Cbe4e4d620CD504F0490B6BD46752D9A1Ccc752",
+      "txHash": "0x7ef086c86909d8d4924788b06d30c8cbbd9bfd9f54b901d076f3d6e443dd2347",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "cba9f8cf52e3c449631a04ea218a6cedcaf7c366669cfc257c89a008266c768f": {
+      "address": "0x1cf29Efd16400F9F4995a0A2261c9c891a556Af9",
+      "txHash": "0xd8b597ff6b2b32cfe4bc7eed7731e9a2a1eabda13723db893c4b3bd4563ab54c",
+      "layout": {
+        "storage": [
+          {
+            "label": "number",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256",
+            "contract": "Storage",
+            "src": "contracts/Storage.sol:7"
+          }
+        ],
+        "types": {
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        }
+      }
+    }
+  }
+}

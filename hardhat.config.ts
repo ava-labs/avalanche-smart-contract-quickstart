@@ -94,5 +94,13 @@ export default {
       chainId: 43114,
       accounts: [],
     },
+    subnet: {
+      url: "http://127.0.0.1:17773/ext/bc/8ttPWTKt2FEs256fJkV2Yj5nJS1JPSfhN2ghAr8aboZWF2gXF/rpc",
+      gasPrice: "auto",
+      chainId: 99999,
+      accounts: [
+        "56289e99c94b6912bfc12adc093c9b51124f0dc54ac7a766b2bc5ccf558d8027",
+      ],
+    },
   },
 };

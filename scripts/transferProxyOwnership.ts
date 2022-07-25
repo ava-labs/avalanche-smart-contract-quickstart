@@ -1,5 +1,5 @@
 async function transferProxyAdminOwnership() {
-  const gnosisSafe = '0x1Ecf23541BC7f891F101A6AF02904f4d6f8F6815'
+  const gnosisSafe = "0xCA2922E98339C359D818b8f7ad3c897C0e18a7ff";
 
   console.log('Transferring ownership of ProxyAdmin...')
   // The owner of the ProxyAdmin can upgrade our contracts
