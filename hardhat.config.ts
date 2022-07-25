@@ -94,13 +94,5 @@ export default {
       chainId: 43114,
       accounts: [],
     },
-    ganache: {
-      url: "HTTP://127.0.0.1:7545",
-      gasPrice: 225000000000,
-      chainId: 1337,
-      accounts: [
-        "131f74a67da0e4287e5bc894690e4bc2170a3273ce306ae309f6f4ad3a011f9c",
-      ],
-    },
   },
 };
