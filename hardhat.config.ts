@@ -95,7 +95,7 @@ export default {
       accounts: [],
     },
     subnet: {
-      url: "http://127.0.0.1:17773/ext/bc/8ttPWTKt2FEs256fJkV2Yj5nJS1JPSfhN2ghAr8aboZWF2gXF/rpc",
+      url: "http://127.0.0.1:10253/ext/bc/VSiL2QmPxgQkdbgN6bMrPFkSVrKMBYjSoxZCSF4ZTnbTmLq5S/rpc",
       gasPrice: "auto",
       chainId: 99999,
       accounts: [
