@@ -8,7 +8,7 @@ async function deployStorage() {
   console.log('Storage deployed to:', storage.address)
 
   const number = (await storage.retrieve()).toString()
-  console.log({storeValue:number})
+  console.log({ number: number });
 }
 
 deployStorage()
