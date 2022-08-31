@@ -88,6 +88,12 @@ export default {
       gasPrice: 225000000000,
       chainId: 43114,
       accounts: []
+    },
+    wagmi: {
+      url: "https://subnets.avax.network/wagmi/wagmi-chain-testnet/rpc",
+      gasPrice: "auto",
+      chainId: 11111,
+      accounts: [],
     }
   }
 }
